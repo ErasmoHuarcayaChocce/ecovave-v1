@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Solution", "0.Solution", "{044770BA-B606-4E03-B9CA-A68431D36996}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Backend", "1.Backend", "{ED2C0C92-0B83-4653-9FE3-28967FA27603}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Services", "2.Services", "{A8AD3CDD-93AE-4ACD-9F09-A1B000FD6115}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Dao", "3.Dao", "{E7B66923-68FC-43B9-AA7C-695C4D2FE1D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Models", "4.Models", "{C72C5D5A-BE24-443F-99A3-666281131E4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Common", "5.Common", "{66950DA4-AC35-4E9C-85DF-C113239A8320}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ecovave-backend", "ecovave-backend\ecovave-backend.csproj", "{A8A9F145-960A-4246-AC07-AF1BFBD2CF33}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ecovave-common", "ecovave-common\ecovave-common.csproj", "{0CBDDDEA-E390-405E-868A-B93C920B6A6B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ecovave-model", "ecovave-model\ecovave-model.csproj", "{5FC1674C-C712-4B6A-97CF-2C40DCD3DADD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ecovave-dao-intf", "ecovave-dao-intf\ecovave-dao-intf.csproj", "{F8432E1D-96D8-434C-AAAD-39B1C1E8DB0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ecovave-dao-imp", "ecovave-dao-imp\ecovave-dao-imp.csproj", "{F4C7B0BF-65B9-4616-AEB9-76A6A6815987}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ecovave-service-imp", "ecovave-service-imp\ecovave-service-imp.csproj", "{A890D128-175A-4947-B5AC-5C6512B062DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ecovave-service-intf", "ecovave-service-intf\ecovave-service-intf.csproj", "{0857E58B-EF68-4E44-81C8-AB0D6D96114C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8A9F145-960A-4246-AC07-AF1BFBD2CF33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8A9F145-960A-4246-AC07-AF1BFBD2CF33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8A9F145-960A-4246-AC07-AF1BFBD2CF33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8A9F145-960A-4246-AC07-AF1BFBD2CF33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CBDDDEA-E390-405E-868A-B93C920B6A6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CBDDDEA-E390-405E-868A-B93C920B6A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CBDDDEA-E390-405E-868A-B93C920B6A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CBDDDEA-E390-405E-868A-B93C920B6A6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FC1674C-C712-4B6A-97CF-2C40DCD3DADD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FC1674C-C712-4B6A-97CF-2C40DCD3DADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FC1674C-C712-4B6A-97CF-2C40DCD3DADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FC1674C-C712-4B6A-97CF-2C40DCD3DADD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8432E1D-96D8-434C-AAAD-39B1C1E8DB0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8432E1D-96D8-434C-AAAD-39B1C1E8DB0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8432E1D-96D8-434C-AAAD-39B1C1E8DB0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8432E1D-96D8-434C-AAAD-39B1C1E8DB0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4C7B0BF-65B9-4616-AEB9-76A6A6815987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C7B0BF-65B9-4616-AEB9-76A6A6815987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C7B0BF-65B9-4616-AEB9-76A6A6815987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C7B0BF-65B9-4616-AEB9-76A6A6815987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A890D128-175A-4947-B5AC-5C6512B062DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A890D128-175A-4947-B5AC-5C6512B062DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A890D128-175A-4947-B5AC-5C6512B062DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A890D128-175A-4947-B5AC-5C6512B062DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0857E58B-EF68-4E44-81C8-AB0D6D96114C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0857E58B-EF68-4E44-81C8-AB0D6D96114C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0857E58B-EF68-4E44-81C8-AB0D6D96114C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0857E58B-EF68-4E44-81C8-AB0D6D96114C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A8A9F145-960A-4246-AC07-AF1BFBD2CF33} = {ED2C0C92-0B83-4653-9FE3-28967FA27603}
+		{0CBDDDEA-E390-405E-868A-B93C920B6A6B} = {66950DA4-AC35-4E9C-85DF-C113239A8320}
+		{5FC1674C-C712-4B6A-97CF-2C40DCD3DADD} = {C72C5D5A-BE24-443F-99A3-666281131E4D}
+		{F8432E1D-96D8-434C-AAAD-39B1C1E8DB0E} = {E7B66923-68FC-43B9-AA7C-695C4D2FE1D9}
+		{F4C7B0BF-65B9-4616-AEB9-76A6A6815987} = {E7B66923-68FC-43B9-AA7C-695C4D2FE1D9}
+		{A890D128-175A-4947-B5AC-5C6512B062DE} = {A8AD3CDD-93AE-4ACD-9F09-A1B000FD6115}
+		{0857E58B-EF68-4E44-81C8-AB0D6D96114C} = {A8AD3CDD-93AE-4ACD-9F09-A1B000FD6115}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06A21FF9-3643-48A2-8329-2857697E5158}
+	EndGlobalSection
+EndGlobal

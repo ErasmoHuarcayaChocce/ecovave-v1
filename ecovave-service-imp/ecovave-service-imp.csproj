@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<RootNamespace>ecovave.service.imp</RootNamespace>
+		<Version>1.0.0</Version>
+		<AssemblyName>ecovave-service-imp-$(Version)</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+	  <PackageReference Include="System.Text.Json" Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ecovave-dao-imp\ecovave-dao-imp.csproj" />
+		<ProjectReference Include="..\ecovave-dao-intf\ecovave-dao-intf.csproj" />
+		<ProjectReference Include="..\ecovave-model\ecovave-model.csproj" />
+		<ProjectReference Include="..\ecovave-service-intf\ecovave-service-intf.csproj" />
+	</ItemGroup>
+	
+	<ItemGroup>
+    <Reference Include="rrhh-negocio-comunes-rabbitmq-lib-1.0.0">
+      <HintPath>C:\apps\rrhh-negocio-comunes-rabbitmq-lib\netstandard2.1\rrhh-negocio-comunes-rabbitmq-lib-1.0.0.dll</HintPath>
+    </Reference>
+    <Reference Include="tecnologia-messaging-rabbitmq-lib-1.0.0">
+      <HintPath>c:\apps\tecnologia-messaging-rabbitmq-lib\netstandard2.1\tecnologia-messaging-rabbitmq-lib-1.0.0.dll</HintPath>
+    </Reference>    
+		<Reference Include="tecnologia-util-lib-1.0.0">
+			<HintPath>c:\apps\tecnologia-util-lib\netstandard2.1\tecnologia-util-lib-1.0.0.dll</HintPath>
+		</Reference>
+    <Reference Include="tecnologia-util-documentos-rabbitmq-lib-1.0.0">
+      <HintPath>C:\apps\tecnologia-util-documentos-rabbitmq-lib\netstandard2.1\tecnologia-util-documentos-rabbitmq-lib-1.0.0.dll</HintPath>
+    </Reference>      
+	</ItemGroup>
+</Project>

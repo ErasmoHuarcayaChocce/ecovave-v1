@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<RootNamespace>ecovave.dao.intf</RootNamespace>
+		<Version>1.0.0</Version>
+		<AssemblyName>ecovave-dao-intf-$(Version)</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ecovave-common\ecovave-common.csproj" />
+		<ProjectReference Include="..\ecovave-model\ecovave-model.csproj" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="tecnologia-util-lib-1.0.0">
+      <HintPath>C:\apps\tecnologia-util-lib\netstandard2.1\tecnologia-util-lib-1.0.0.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  
+</Project>

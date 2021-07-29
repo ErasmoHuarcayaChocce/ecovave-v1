@@ -1,0 +1,78 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>ecovave.backend</RootNamespace>
+    <Version>1.0.0</Version>
+    <AssemblyName>ecovave-backend-$(Version)</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>C:\apps\ecovave-backend</OutputPath>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="bin\**" />
+    <Content Remove="bin\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <None Remove="bin\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Elastic.CommonSchema.Serilog" Version="1.5.1" />
+    <PackageReference Include="EPPlus" Version="5.5.2" />
+    <PackageReference Include="iTextSharp.LGPLv2.Core" Version="1.7.0" />
+    <PackageReference Include="Jaeger" Version="0.4.2" />
+    <PackageReference Include="Microsoft.Extensions.ObjectPool" Version="5.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.1" ExcludeAssets="All" />
+    <PackageReference Include="OpenTracing.Contrib.NetCore" Version="0.6.2" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.2.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Formatting.Elasticsearch" Version="8.4.1" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="System.Text.Json" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="5.0.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.System" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ecovave-common\ecovave-common.csproj" />
+    <ProjectReference Include="..\ecovave-model\ecovave-model.csproj" />
+    <ProjectReference Include="..\ecovave-service-imp\ecovave-service-imp.csproj" />
+    <ProjectReference Include="..\ecovave-service-intf\ecovave-service-intf.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="rrhh-negocio-comunes-rabbitmq-lib-1.0.0">
+      <HintPath>c:\apps\rrhh-negocio-comunes-rabbitmq-lib\netstandard2.1\rrhh-negocio-comunes-rabbitmq-lib-1.0.0.dll</HintPath>
+    </Reference>
+    <Reference Include="tecnologia-messaging-rabbitmq-lib-1.0.0">
+      <HintPath>c:\apps\tecnologia-messaging-rabbitmq-lib\netstandard2.1\tecnologia-messaging-rabbitmq-lib-1.0.0.dll</HintPath>
+    </Reference>
+    <Reference Include="tecnologia-tracing-jaeger-lib-1.0.0">
+      <HintPath>c:\apps\tecnologia-tracing-jaeger-lib\netcoreapp3.1\tecnologia-tracing-jaeger-lib-1.0.0.dll</HintPath>
+    </Reference>
+    <Reference Include="tecnologia-util-lib-1.0.0">
+      <HintPath>c:\apps\tecnologia-util-lib\netstandard2.1\tecnologia-util-lib-1.0.0.dll</HintPath>
+    </Reference>
+    <Reference Include="tecnologia-web-lib-1.0.0">
+      <HintPath>c:\apps\tecnologia-web-lib\netcoreapp3.1\tecnologia-web-lib-1.0.0.dll</HintPath>
+    </Reference>
+    <Reference Include="tecnologia-util-documentos-rabbitmq-lib-1.0.0">
+      <HintPath>C:\apps\tecnologia-util-documentos-rabbitmq-lib\netstandard2.1\tecnologia-util-documentos-rabbitmq-lib-1.0.0.dll</HintPath>
+    </Reference>    
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\css\dotnet.css" />
+  </ItemGroup>
+</Project>
