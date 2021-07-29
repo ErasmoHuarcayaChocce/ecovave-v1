@@ -46,7 +46,7 @@ namespace ecovave.dao.imp
                                  @CreateIp
                                 );";
             SqlParameter[] parameters =
-             { 
+             {
               new SqlParameter("@UserName",request.UserName),
               new SqlParameter("@FirsName",request.FirsName),
               new SqlParameter("@LastName",request.LastName),
@@ -94,7 +94,7 @@ namespace ecovave.dao.imp
 
 
             SqlParameter[] parametro =  {
-                new SqlParameter("@ID_POSTULACION", idUsuarrio),
+                new SqlParameter("@UserId", idUsuarrio),
             };
 
             SqlDataReader dr = null;
