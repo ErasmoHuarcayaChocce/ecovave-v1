@@ -6,40 +6,40 @@ using ecovave.service.intf;
 using minedu.tecnologia.util.lib;
 using minedu.tecnologia.util.lib.Exceptions;
 using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ecovave.service.imp
 {
-    public class UserService : ServiceBase, IUserService
+    public class DeliveryService : ServiceBase, IDeliveryService
     {
-        private IUserDAO userDAO;
-        public UserService(string txtConnectionString)
+        private IDeliveryDAO deliveryDAO;
+        public DeliveryService(string txtConnectionString)
         {
             base.txtConnectionString = txtConnectionString;
-            userDAO = new UserDAO(this.txtConnectionString);
+            deliveryDAO = new DeliveryDAO(this.txtConnectionString);
         }
-        public async Task<int> CrearUsuario(UserDto request)
+
+        public async Task<int> CrearDelivery(DeliveryDto request)
         {
             int response = 0;
             TransactionBase transaction = await SqlHelper.BeginTransaction(txtConnectionString);
             try
             {
-                User user = new User
+                Delivery delivery = new Delivery
                 {
-                    UserName = request.UserName,
-                    FirsName = request.FirsName,
-                    LastName = request.LastName,
-                    DocumentTypeId = request.DocumentTypeId,
-                    DocumentNumber = request.DocumentNumber,
-                    MobilphoneNumber = request.MobilphoneNumber,
-                    TelephoneNumber = request.TelephoneNumber,
-                    IsActived = request.IsActived,
-                    EsDeleted = request.EsDeleted,
+                    UserId = request.UserId,
+                    ScheduleId = request.ScheduleId,
+                    QuantityKg = request.QuantityKg,
+                    DeliveryDate = request.DeliveryDate,
+                    Description = request.Description,
+                    IsDeleted = request.IsDeleted,
                     CreatedUser = request.CreatedUser,
                     CreatedDate = request.CreatedDate,
-                    CreateIp = request.CreateIp
+                    CreateIp = request.CreatedIp
                 };
-                response = await userDAO.CrearUsuario(user, transaction);
+                response = await deliveryDAO.CrearDelivery(delivery, transaction);
                 if (response < 1) throw new CustomException(Constante.EX_DRE_CREATE);
             }
             catch (Exception ex)
@@ -53,33 +53,47 @@ namespace ecovave.service.imp
             }
             return response;
         }
-        public Task<int> EliminarUsuario(UserDto request)
+
+        public void Dispose()
+        {
+            if (deliveryDAO != null) deliveryDAO = null;
+        }
+
+        public Task<int> EliminarDelivery(DeliveryDto request)
         {
             throw new NotImplementedException();
         }
-        public async Task<int> ModificarUsuario(UserDto request)
+
+        public async Task<DeliveryDto> GetDeliveryById(int idDelivery)
+        {
+            if (idDelivery <= 0) throw new ValidationCustomException(Constante.EX_PARAMETROS_INCORRECTOS);
+            DeliveryDto delivery = await deliveryDAO.GetDeliveryById(idDelivery);
+            return delivery;
+        }
+
+        public async Task<int> ModificarDelivery(DeliveryDto request)
         {
             int response = 0;
             if (request.UserId <= 0) throw new ValidationCustomException(Constante.EX_PARAMETROS_INCORRECTOS);
             TransactionBase transaction = await SqlHelper.BeginTransaction(txtConnectionString);
             try
             {
-                User user = new User
+                Delivery delivery = new Delivery
                 {
                     UserId = request.UserId,
-                    UserName = request.UserName,
-                    FirsName = request.FirsName,
-                    LastName = request.LastName,
-                    DocumentTypeId = request.DocumentTypeId,
-                    DocumentNumber = request.DocumentNumber,
-                    MobilphoneNumber = request.MobilphoneNumber,
-                    TelephoneNumber = request.TelephoneNumber,
-                    IsActived = request.IsActived,
+                    ScheduleId = request.ScheduleId,
+                    QuantityKg = request.QuantityKg,
+                    DeliveryDate = request.DeliveryDate,
+                    Description = request.Description,
+                    IsDeleted = request.IsDeleted,
+                    CreatedUser = request.CreatedUser,
+                    CreatedDate = request.CreatedDate,
+                    CreateIp = request.CreatedIp,
                     ModifiedUser = request.ModifiedUser,
                     ModifiedDate = request.ModifiedDate,
                     ModifiedIp = request.ModifiedIp
                 };
-                response = await userDAO.ModificarUsuario(user, transaction);
+                response = await deliveryDAO.ModificarDelivery(delivery, transaction);
                 if (response < 1) throw new CustomException(Constante.EX_DRE_CREATE);
             }
             catch (Exception ex)
@@ -92,16 +106,6 @@ namespace ecovave.service.imp
                 await SqlHelper.DisposeTransactionAsync(transaction);
             }
             return response;
-        }
-        public void Dispose()
-        {
-            if (userDAO != null) userDAO = null;
-        }
-        public async Task<UserResponse> GetUsuarioCustomById(int idUsuarrio)
-        {
-            if (idUsuarrio <= 0) throw new ValidationCustomException(Constante.EX_PARAMETROS_INCORRECTOS);
-            UserResponse usuarioResponse = await userDAO.GetUsuarioCustomById(idUsuarrio);
-            return usuarioResponse;
         }
     }
 }
