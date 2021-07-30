@@ -16,6 +16,8 @@ using System.Threading.Tasks;
 
 namespace ecovave.backend.Controllers
 {
+    [Route("api/ecovave/delivery")]
+    [ApiController]
     public class DeliveryController : ControllerBase
     {
         private readonly IConfiguration config;
@@ -28,7 +30,7 @@ namespace ecovave.backend.Controllers
             this.tracer = tracer;
             this.environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? Constante.Produccion;
         }
-        [HttpGet("{userId}", Name = "usuario por Id")]
+        [HttpGet("{deliveryId}", Name = "delivery por Id")]
         [Produces("application/json", Type = typeof(StatusResponse))]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]

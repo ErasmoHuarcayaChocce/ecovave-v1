@@ -21,7 +21,8 @@ namespace ecovave.dao.imp
         {
             int response = 0;
             string sql = @"INSERT INTO dbo.Delivery
-                                        (UserId, 
+                                        (DeliveryId,
+                                         UserId, 
                                          ScheduleId, 
                                          QuantityKg, 
                                          DeliveryDate, 
@@ -30,10 +31,10 @@ namespace ecovave.dao.imp
                                          CreatedUser, 
                                          CreatedDate, 
                                          CreatedIp
-                                        )
-                                        OUTPUT INSERTED.DeliveryId
+                                        )                      
                                         VALUES
-                                        (@UserId, 
+                                        (@DeliveryId,
+                                         @UserId, 
                                          @ScheduleId, 
                                          @QuantityKg, 
                                          @DeliveryDate, 
@@ -46,6 +47,7 @@ namespace ecovave.dao.imp
 
             SqlParameter[] parameters =
             {
+              new SqlParameter("@DeliveryId",request.DeliveryId),
               new SqlParameter("@UserId",request.UserId),
               new SqlParameter("@ScheduleId",request.ScheduleId),
               new SqlParameter("@QuantityKg",request.QuantityKg),
@@ -54,14 +56,14 @@ namespace ecovave.dao.imp
               new SqlParameter("@IsDeleted",request.IsDeleted),
               new SqlParameter("@CreatedUser",request.CreatedUser),
               new SqlParameter("@CreatedDate",request.CreatedDate),
-              new SqlParameter("@CreateIp",request.CreateIp)
+              new SqlParameter("@CreatedIp",request.CreateIp)
             };
             try
             {
                 var insertId = await SqlHelper.ExecuteScalarAsync(transaction.connection, transaction.transaction, CommandType.Text, sql, parameters);
-                response = Convert.ToInt32(insertId);
+                response = 1;
                 request.DeliveryId = response;
-                return Convert.ToInt32(insertId);
+                return response;
             }
             catch (Exception ex)
             {
