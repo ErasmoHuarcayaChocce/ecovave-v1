@@ -37,7 +37,7 @@ namespace ecovave.service.imp
                     EsDeleted = request.EsDeleted,
                     CreatedUser = request.CreatedUser,
                     CreatedDate = request.CreatedDate,
-                    CreateIp = request.CreateIp
+                    CreatedIp = request.CreateIp
                 };
                 response = await userDAO.CrearUsuario(user, transaction);
                 if (response < 1) throw new CustomException(Constante.EX_DRE_CREATE);

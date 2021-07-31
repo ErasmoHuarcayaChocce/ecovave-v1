@@ -56,7 +56,7 @@ namespace ecovave.dao.imp
               new SqlParameter("@IsDeleted",request.IsDeleted),
               new SqlParameter("@CreatedUser",request.CreatedUser),
               new SqlParameter("@CreatedDate",request.CreatedDate),
-              new SqlParameter("@CreatedIp",request.CreateIp)
+              new SqlParameter("@CreatedIp",request.CreatedIp)
             };
             try
             {
@@ -152,7 +152,7 @@ namespace ecovave.dao.imp
               new SqlParameter("@Description",request.Description),
               new SqlParameter("@ModifiedUser",request.CreatedUser),
               new SqlParameter("@ModifiedDate",request.CreatedDate),
-              new SqlParameter("@ModifiedIp",request.CreateIp)
+              new SqlParameter("@ModifiedIp",request.CreatedIp)
             };
             try
             {

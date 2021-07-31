@@ -37,7 +37,7 @@ namespace ecovave.service.imp
                     IsDeleted = request.IsDeleted,
                     CreatedUser = request.CreatedUser,
                     CreatedDate = request.CreatedDate,
-                    CreateIp = request.CreatedIp
+                    CreatedIp = request.CreatedIp
                 };
                 response = await deliveryDAO.CrearDelivery(delivery, transaction);
                 if (response < 1) throw new CustomException(Constante.EX_DRE_CREATE);
@@ -88,7 +88,7 @@ namespace ecovave.service.imp
                     IsDeleted = request.IsDeleted,
                     CreatedUser = request.CreatedUser,
                     CreatedDate = request.CreatedDate,
-                    CreateIp = request.CreatedIp,
+                    CreatedIp = request.CreatedIp,
                     ModifiedUser = request.ModifiedUser,
                     ModifiedDate = request.ModifiedDate,
                     ModifiedIp = request.ModifiedIp

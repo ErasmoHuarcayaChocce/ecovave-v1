@@ -21,7 +21,7 @@ namespace ecovave.model
     {
         public string CreatedUser { get; set; }
         public DateTime CreatedDate { get; set; }
-        public string CreateIp { get; set; }
+        public string CreatedIp { get; set; }
     }
     public class AuditUpdate
     {

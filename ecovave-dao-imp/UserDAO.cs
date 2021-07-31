@@ -29,7 +29,7 @@ namespace ecovave.dao.imp
                                 EsDeleted, 
                                 CreatedUser, 
                                 CreatedDate, 
-                                CreateIp)
+                                CreatedIp)
                                 OUTPUT INSERTED.UserId
                             VALUES
                                 (@UserName, 
@@ -43,7 +43,7 @@ namespace ecovave.dao.imp
                                  @EsDeleted, 
                                  @CreatedUser, 
                                  @CreatedDate, 
-                                 @CreateIp
+                                 @CreatedIp
                                 );";
             SqlParameter[] parameters =
              {
@@ -58,7 +58,7 @@ namespace ecovave.dao.imp
               new SqlParameter("@EsDeleted",request.EsDeleted),
               new SqlParameter("@CreatedUser",request.CreatedUser),
               new SqlParameter("@CreatedDate",request.CreatedDate),
-              new SqlParameter("@CreateIp",request.CreateIp)
+              new SqlParameter("@CreatedIp",request.CreatedIp)
             };
             try
             {
